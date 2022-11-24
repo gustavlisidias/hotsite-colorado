@@ -1,0 +1,316 @@
+{% extends 'index.html' %}
+{% block content %}
+{% load static %}
+{% load customfilters %}
+{% include 'mensagem.html' %}
+<div id="fullpage" class="fullpage-default">
+    <!--Inicio-->
+    <div class="section animated-row" data-section="slide01">
+        <div class="section-inner">
+            <div class="welcome-box">
+                <h1 class="animate" data-animate="fadeInUp">Parceira de sua jornada produtiva</h1>
+                <p class="animate" data-animate="fadeInUp" style="font-size: 85%; text-align: justify; text-align-last: center;">
+                    Somos a Colorado Máquinas Agrícolas, concessionário John Deere, e atualmente temos 10 lojas que atendem a 
+                    83 municípios do interior do Estado de São Paulo com soluções para todos os tipos de cultura: máquinas, 
+                    implementos agrícolas, agricultura de precisão, monitoramento e diagnóstico remoto, além de pronta-entrega 
+                    ao cliente (pós-venda no campo), facilitando a manutenção preventiva. Nosso pós-venda é estruturado e temos 
+                    um Centro de Distribuição de peças e logística próprio. 
+                    <br>
+                    Explore o nosso site e saiba um pouco mais sobre tudo o que oferecemos!
+                    <br>
+                    Colorado Máquinas, sempre pronta para entregar a melhor experiência com o seu John Deere!
+                </p>
+                <div style="font-size: 30px;" class="scroll-down next-section animate data-animate=" fadeInUp"">
+                    <i class="fa fa-angle-double-down fa-10x" aria-hidden="true"></i>
+                    <span>Descer</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Fim Inicio-->
+
+    <!--Campanhas-->
+    <div class="section animated-row" data-section="slide02">
+        <div class="section-inner">
+            <div class="row justify-content-center">
+                <div class="col-md-8 wide-col-laptop">
+                    <div class="title-block animate" data-animate="fadeInUp">
+                        <h3>Campanhas</h3>
+                    </div>
+                    <div class="services-section">
+                        <div class="services-list owl-carousel">
+                            {% for i in classes %}
+                                {% if i.grupo == 'Campanha' %}
+                                    <div class="item animate" data-animate="fadeInUp">
+                                        <div class="portfolio-item">
+                                            <div class="thumb">
+                                                <a style="text-decoration: none;" href="{{i.url|safe}}"><img src="{{i.imagem.url}}">
+                                                    <p style="color: black; padding-top:2%; margin: 0 0 2%">{{i.nome}}</p>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Fim Campanhas-->
+
+    <!--Colorado Show-->
+    <div class="section animated-row" data-section="slide03">
+        <div class="section-inner">
+            <div class="about-section">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 wide-col-laptop">
+                        <div class="row">
+                            {% for i in coloradoshow %}
+                                {% if i.status %}
+                                    <div class="animate image fit col-md-6 col-12 justify-content-center" data-animate="fadeInUp" style="margin-top: 5%;">
+                                        <img src="{{i.imagem.url}}" class="rounded">
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                            <div class="col-md-6">
+                                <div class="about-contentbox">
+                                    <div class="animate" data-animate="fadeInUp">
+                                        <span>Evento</span>
+                                        <h3>Colorado Show</h3>
+                                        {% for i in coloradoshow %}
+                                            {% if i.status %}
+                                                {{i.descricao|safe}}
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                    <a href="{% url 'coloradoshow' %}" data-animate="fadeInUp" class="btn mt-2" style="float: left;">Ver Evento</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Fim Colorado Show-->
+
+    <!--Aplicativo-->
+    <div class="section animated-row" data-section="slide04">
+        <div class="section-inner">
+            <div class="about-section">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 wide-col-laptop">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="about-contentbox">
+                                    <div class="animate" data-animate="fadeInUp">
+                                        <span>Aplicativo</span>
+                                        <h3>Colorado Conecta</h3>
+                                        {% for i in conecta %}
+                                            {% if i.status %}
+                                                {{i.descricao|safe}}
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                    <div class="facts-list owl-carousel">
+                                        <div class="item animate" data-animate="fadeInUp">
+                                            <div class="counter-box">
+                                                <i class="fa fa-trophy counter-icon" aria-hidden="true"></i>
+                                                <p>Equipamentos <br> John Deere</p>
+                                            </div>
+                                        </div>
+                                        <div class="item animate" data-animate="fadeInUp">
+                                            <div class="counter-box">
+                                                <i class="fa fa-leaf counter-icon" aria-hidden="true"></i>
+                                                <p>Implementos <br> Green System</p>
+                                            </div>
+                                        </div>
+                                        <div class="item animate" data-animate="fadeInUp">
+                                            <div class="counter-box">
+                                                <i class="fa fa-desktop counter-icon" aria-hidden="true"></i>
+                                                <p>Agricultura <br> de Precisão</p>
+                                            </div>
+                                        </div>
+                                        <div class="item animate" data-animate="fadeInUp">
+                                            <div class="counter-box">
+                                                <i class="fa fa-cubes counter-icon" aria-hidden="true"></i>
+                                                <p>Implementos multimarcas</p>
+                                            </div>
+                                        </div>
+                                        <div class="item animate" data-animate="fadeInUp">
+                                            <div class="counter-box">
+                                                <i class="fa fa-support counter-icon" aria-hidden="true"></i>
+                                                <p>Equipamento <br> OXBO</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% for i in conecta %}
+                                {% if i.status %}
+                                    <div class="animate image fit col-md-6 col-12 justify-content-center" data-animate="fadeInUp" style="margin-top: 5%;">
+                                        <img src="{{i.imagem.url}}" class="rounded">
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Fim Aplicativo-->
+
+    <!--Collections-->
+    <!--<div class="section animated-row" data-section="slide04">
+        <div class="section-inner">
+            <div class="row justify-content-center">
+                <div class="col-md-8 wide-col-laptop">
+                    <div class="title-block animate" data-animate="fadeInUp">
+                        <h3>Linha Collection John Deere</h3>
+                    </div>
+                    <div class="services-section">
+                        <div class="services-list owl-carousel">
+                            {% for i in classes %}
+                                {% if i.grupo == 'Collection' %}
+                                    <div class="item animate" data-animate="fadeInUp">
+                                        <div class="portfolio-item">
+                                            <div class="thumb">
+                                                <a style="text-decoration: none;" href="{{i.url|safe}}"><img src="{{i.imagem.url}}"></a>
+                                                <p style="color: black; padding-top:2%; margin: 0 0 2%">{{i.nome}}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>-->
+    <!--Fim Collections-->
+
+    <!--Webserie-->
+    <div class="section animated-row" data-section="slide05">
+        <div class="section-inner">
+            <div class="row justify-content-center">
+                <div class="col-md-8 wide-col-laptop">
+                    <div class="carousel slide" id="carouselWebserie" data-ride="carousel">
+                        <div class="title-block animate" data-animate="fadeInUp">
+                            <h3>Colorado em Campo</h3>
+                        </div>
+                        <div class="carousel-inner">
+                            {% for item in videos %}
+                                {% if forloop.first %}
+                                    <div class="carousel-item active">
+                                        <iframe class="imgcar" src="https://www.youtube.com/embed/{{ item.url|embed }}" allowfullscreen></iframe>
+                                    </div>
+                                {% else %}
+                                    <div class="carousel-item">
+                                        <iframe class="imgcar" src="https://www.youtube.com/embed/{{ item.url|embed }}" allowfullscreen></iframe>
+                                    </div>
+                                {% endif %}
+                            {% endfor %}
+                            <a class="carousel-control-prev" href="#carouselWebserie" role="button" data-slide="prev">
+                                <span class="spancar carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Anterior</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselWebserie" role="button" data-slide="next">
+                                <span class="spancar carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Próximo</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Fim Webserie-->
+
+    <!--Contato-->
+    <div class="section animated-row" data-section="slide06">
+        <div class="section-inner">
+            <div class="row justify-content-center">
+                <div class="col-md-7 wide-col-laptop">
+                    <div class="title-block animate" data-animate="fadeInUp">
+                        <h3>Contate-nos</h3>
+                    </div>
+                    <div class="contact-section">
+                        <div class="row" style="margin-bottom: 100px">
+                            <div class="col-md-6 animate" data-animate="fadeInUp">
+                                <div class="contact-box">
+                                    <div class="contact-row">
+                                        <form method="GET" action="" id="searchform">
+                                            <div class="d-flex">
+                                                <div class="flex-grow-1">
+                                                    <input class="form-control" style="margin-bottom: 0px;" onchange='this.form.submit()' list="cidades" autocomplete="off" id="searchboxq" name="q" type="text" value="{{ request.GET.q }}" placeholder="Lojas...">
+                                                    <datalist id="cidades">                                                        
+                                                        <option value="Ribeirao Preto"/>
+                                                        <option value="Araraquara"/>
+                                                        <option value="Barretos"/>
+                                                        <option value="Guaira"/>
+                                                        <option value="Ituverava"/>
+                                                        <option value="Orlandia"/>
+                                                        <option value="Bebedouro"/>
+                                                        <option value="Monte Alto"/>
+                                                        <option value="Franca"/>
+                                                        <option value="Itapolis"/>
+                                                    </datalist>
+                                                </div>
+                                                <div style="display: none;">
+                                                    <button type="submit"><i class="fa fa-search"></i></button>
+                                                </div>
+                                            </div>
+
+                                            <div class="m-2">
+                                                {{endereco}}
+                                            </div>
+
+                                            <div class="google-maps">
+                                                <iframe src="{{mapa}}" 
+                                                width="100%" height="270" frameborder="0" marginheight="0" marginwidth="0" loading="lazy"></iframe>
+                                            </div>
+                                        </form>
+                                    </div>                                    
+                                </div>
+                            </div>
+                            <div class="col-md-6 animate" data-animate="fadeInUp">
+                                <form method="post" action="">
+                                    {% csrf_token %}
+                                    <div class="input-field">
+                                        <input type="text" class="form-control" name="nome" id="id_nome" required
+                                            placeholder="Nome">
+                                    </div>
+                                    <div class="input-field">
+                                        <input type="email" class="form-control" name="email" id="id_email" required
+                                            placeholder="Email">
+                                    </div>
+                                    <div class="input-field">
+                                        <input type="text" class="form-control" name="assunto" id="id_assunto" required
+                                            placeholder="Assunto">
+                                    </div>
+                                    <div class="input-field">
+                                        <textarea class="form-control" name="mensagem" id="id_mensagem" required placeholder="Mensagem"></textarea>
+                                    </div>
+                                    <button class="btn" type="submit">Enviar</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Footer-->
+                    <footer id="footer">
+                        <p style="text-align:center; margin-top: 2%; padding-right: 2%;">Colorado Comércio de Máquinas Agrícolas &copy;</p>
+                    </footer>
+                    <!--Fim Footer-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Fim Contato-->
+
+</div>
+{% endblock content %}

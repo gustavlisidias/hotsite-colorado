@@ -1,0 +1,46 @@
+{% extends 'index.html' %}
+{% block content %}
+{% load static %}
+{% include 'mensagem.html' %}
+<div id="fullpage" class="fullpage-default">
+	<div class="section animated-row" data-section="slide06">
+		<div class="section-inner">
+			<div class="row justify-content-center">
+				<div class="col-md-7 wide-col-laptop">
+					<div class="title-block animate" data-animate="fadeInUp">
+						<h3>Suporte & Atendimento</h3>
+					</div>
+					<div class="contact-section">
+						<div class="row">
+							<div class="col animate" data-animate="fadeInUp">
+								<div class="contact-box">
+									<!-- Inicio dos Contatos -->
+									<div class="row mb-5">
+										{% for i in canais %}
+											<div class="col-6 mb-3">
+												<div class="d-flex flex-column" style="background-color: rgba(255, 255, 255, .3); border-radius: 10px;">
+													<div class="d-flex justify-content-center p-2">
+														{{i.suporte}}
+													</div>
+													<div class="p-3">
+														<a href="tel:+550{{i.telefone|cut:'('|cut:')'|cut:'-'|cut:' ' }}"><i class="fa fa-phone"></i> {{i.telefone}}</a>
+														<br>
+														<a href="tel:+550{{i.celular|cut:'('|cut:')'|cut:'-'|cut:' ' }}"><i class="fa fa-whatsapp"></i> {{i.celular}}</a>
+														<br>
+														<a href="mailto:{{i.email}}"><i class="fa fa-envelope"></i> {{i.email}}</a>
+													</div>
+												</div>
+											</div>
+										{% endfor %}
+									</div>
+									<!-- Fim dos Contatos -->
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock content %}

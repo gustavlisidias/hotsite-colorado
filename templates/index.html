@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+{% load static %}
+
+<head>
+
+  <title>Colorado Máquinas - {{ index }}</title>
+  <link rel="icon" href="{% static 'home/images/logo.png' %}">
+
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="Colorado Máquinas - {{ index }}">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Conheça as campanhas e promoções disponíveis para nossas máquinas agrícolas, serviços, peças, implementos, agricultura de precisão e consórcio. Confira também as roupas, brinquedos e utensílios que a Colorado Máquinas John Deere possui para você.">
+  <meta name="keywords" content="{{ seo }}">
+  <meta name="author" content="Gustavo Lisi">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://metatags.io/">
+  <meta property="og:title" content="Colorado Máquinas - {{ index }}">
+  <meta property="og:description" content="Conheça as campanhas e promoções disponíveis para nossas máquinas agrícolas, serviços, peças, implementos, agricultura de precisão e consórcio. Confira também as roupas, brinquedos e utensílios que a Colorado Máquinas John Deere possui para você.">
+  <meta property="og:image" content="{% static 'home/images/seo.jpg' %}">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://metatags.io/">
+  <meta property="twitter:title" content="Colorado Máquinas - {{ index }}">
+  <meta property="twitter:description" content="Site de campanhas, promoções e produtos da Colorado Máquinas John Deere">
+  <meta property="twitter:image" content="{% static 'home/images/seo.jpg' %}">
+
+  <!-- Google Tag Manager -->
+  <script>
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-NXCPKWC');
+  </script>
+  <!-- End Google Tag Manager -->
+
+  <!-- Global site tag - Google Analytics (PowerBI) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EZFGCDFXZ4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-EZFGCDFXZ4');
+  </script>
+  <!-- End Google Analytics (PowerBI) -->
+
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,700,900">
+  <link rel="stylesheet" href="{% static 'home/css/bootstrap.min.css' %}?{% now 'U' %}" type="text/css" />
+  <link rel="stylesheet" href="{% static 'home/css/font-awesome.css' %}?{% now 'U' %}" type="text/css" />
+  <link rel="stylesheet" href="{% static 'home/css/fullpage.min.css' %}?{% now 'U' %}" type="text/css" />
+  <link rel="stylesheet" href="{% static 'home/css/owl.carousel.css' %}?{% now 'U' %}" type="text/css" />
+  <link rel="stylesheet" href="{% static 'home/css/animate.css' %}?{% now 'U' %}" type="text/css" />
+  <link rel="stylesheet" href="{% static 'home/css/templatemo-style.css' %}?{% now 'U' %}" type="text/css" />
+  <link rel="stylesheet" href="{% static 'home/css/responsive.css' %}?{% now 'U' %}" type="text/css" />
+
+</head>
+
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NXCPKWC" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <div id="video">
+
+    <div class="preloader">
+      <div class="preloader-bounce">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+
+    <!--Header-->
+    <header id="header">
+      <div class="container-fluid">
+        <div class="navbar">
+          <div class="d-flex flex-nowrap">
+
+            <div class="order-1 pr-2 d-flex align-self-center">
+              <a href="{% url 'home' %}" style="text-decoration: none;">
+                <p class="rapheader">Colorado Máquinas</p>
+              </a>
+            </div>
+
+
+          </div>
+
+          <div class="navigation-row">
+            <nav id="navigation">
+              <button type="button" class="navbar-toggle"> <i class="fa fa-bars"></i> </button>
+              <div class="nav-box navbar-collapse">
+                <ul class="navigation-menu nav navbar-nav navbars text-dark" id="nav">
+                  <li data-menuanchor="slide01" class="active"><a href="{% url 'home' %}">Início</a></li>
+                  <li data-menuanchor="slide02"><a href="{% url 'home' %}#slide02">Promoções</a></li>
+                  <li data-menuanchor="slide03"><a href="{% url 'home' %}#slide03">Colorado Show</a></li>
+                  <li data-menuanchor="slide04"><a href="{% url 'home' %}#slide04">Aplicativo</a></li>
+                  <!--<li data-menuanchor="slide04"><a href="{% url 'home' %}#slide04">Collections</a></li>-->
+                  <li data-menuanchor="slide05"><a href="{% url 'home' %}#slide05">Websérie</a></li>
+                  <li data-menuanchor="slide06"><a href="{% url 'home' %}#slide06">Contato</a></li>
+                  <li><a href="{% url 'suporte' %}">Suporte</a></li>
+                  <li><img class="img-fluid d-none d-md-block" style="margin-top: -7%" src="{% static 'home/images/logo1.jpg' %}" width="200" height="380"></li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+
+
+        </div>
+      </div>
+    </header>
+    <!--Fim Header-->
+
+    <!--Background Video-->
+    <video autoplay muted loop id="myVideo">
+      <source src="{% static 'home/images/video0.mp4' %}" type="video/mp4">
+    </video>
+    <!--Fim Background Video-->
+    {% block content %}
+
+
+    {% endblock content %}
+    <!--Redes Sociais-->
+    <div id="social-icons">
+      <div class="text-right">
+        <ul class="social-icons">
+          <li><a href="https://www.facebook.com/coloradomaquinas/" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+          <li><a href="https://www.youtube.com/channel/UCOqMy2Y0Sz76tyjDNoNegiQ" target="_blank" title="YouTube"><i class="fa fa-youtube-play"></i></a></li>
+          <li><a href="https://www.linkedin.com/company/colorado-m%C3%A1quinas/" target="_blank" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+          <li><a href="https://www.instagram.com/coloradomaquinas/?hl=pt-br" target="_blank" title="Instagram"><i class="fa fa-instagram"></i></a></li>
+          <li><a href="https://api.whatsapp.com/send?phone=5516996087703" target="_blank" title="WhatsApp"><i class="fa fa-whatsapp"></i></a></li>
+        </ul>
+      </div>
+    </div>
+    <!--Fim Redes Sociais-->
+  </div>
+  <!--Scripts-->
+  <script type="text/javascript" src="{% static 'home/js/jquery.js' %}"></script>
+  <script type="text/javascript" src="{% static 'home/js/bootstrap.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'home/js/fullpage.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'home/js/scrolloverflow.js' %}"></script>
+  <script type="text/javascript" src="{% static 'home/js/owl.carousel.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'home/js/jquery.inview.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'home/js/form.js' %}"></script>
+  <script type="text/javascript" src="{% static 'home/js/custom.js' %}"></script>
+
+  <!--Cookie Consent de https://www.PrivacyPolicies.com-->
+  <script type="text/javascript" src="{% static 'home/js/cookie.js' %}"></script>
+  <script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function () {
+      cookieconsent.run({ "notice_banner_type": "headline", "consent_type": "express", "palette": "light", "language": "pt", "website_name": "Colorado Máquinas - Loja", "change_preferences_selector": "#cookie_consent" });
+    });
+  </script>
+  <noscript>Cookie Consent by <a href="https://www.PrivacyPolicies.com/cookie-consent/" rel="nofollow noopener">PrivacyPolicies.com</a></noscript>
+  <!--Fim Cookie Consent-->
+
+  <!--Mascaras-->
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('#id_numero').mask('(00) 00000-0000');
+    });
+  </script>
+  <script>
+    function countChar(val) {
+      var len = val.value.length;
+      if (len >= 512) {
+        val.value = val.value.substring(0, 512);
+      } else {
+        $('#charNum').text(512 - len);
+      }
+    };
+  </script>
+  <!--Fim Mascaras-->
+
+  <!--Fim Scripts-->
+</body>
+
+</html>

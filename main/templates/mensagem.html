@@ -1,0 +1,13 @@
+{% if messages %}
+<div class="messages" style="color: green;">
+    {% for message in messages %}
+        {% if message.tags %}
+            <script>
+                if (window.confirm("{{ message }}\nGostaria de visitar nosso whatsapp?")) {
+                    window.open("https://api.whatsapp.com/send?phone=5516996087703&text=Ola,%20estou%20interessado%20em%20mais%20informacoes%20sobre%20a%20campanha...");
+                }
+            </script>
+        {% endif %}
+    {% endfor %}
+</div>
+{% endif %}

@@ -1,0 +1,61 @@
+{% extends 'index.html' %}
+{% block content %}
+{% load static %}
+{% include 'mensagem.html' %}
+
+<style>
+    html {
+        scroll-behavior: smooth;
+    }
+</style>
+
+<script src="https://kit.fontawesome.com/b29340f9a2.js"></script>
+<div class="camp">
+    {% for i in queryset %}
+    <div class="mb-5">
+        <div class="contt">
+            <img src="{{ i.imagem.url }}" style="width: 100%;">
+            <div class="titlecontt">
+                {{ i.campanha }}
+            </div>
+            <div class="bottomcontt">
+                {% if i.contato1 %}<p><i class="fab fa-whatsapp"></i> {{i.contato1}}</p>{% endif %}
+                {% if i.contato2 %}<p><i class="fas fa-phone-alt"></i> {{i.contato2}}</p>{% endif %}
+                {% if i.local %}<p><i class="fas fa-map-marker-alt"></i> {{i.local}}</p>{% endif %}
+                <a href="cadastrar-contato/{{ i.id }}" class="btn mt-2">Fale Conosco</a>
+                <br><br>
+                <a href="#section{{i.id}}"><span>Descer </span><i class="fa fa-angle-double-down" aria-hidden="true"></i></a>
+            </div>
+        </div>
+        <div class="px-5 my-5" id="section{{i.id}}">
+            <div class="row px-0 px-md-5">
+                <div class="col px-3 px-md-5">
+                    <h5>Descrição</h5>
+                    <hr style="border-top: 2px solid rgba(54, 124, 43, 0.85);">
+                    {{ i.descricao|safe }}
+                </div>
+                <div class="col px-3 px-md-5">
+                    <h5>Informações</h5>
+                    <hr style="border-top: 2px solid rgba(54, 124, 43, 0.85);">
+                    {{ i.informacoes|safe }}
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<script>
+    var prevScrollpos = window.pageYOffset;
+    window.onscroll = function () {
+        var currentScrollPos = window.pageYOffset;
+        if (prevScrollpos > currentScrollPos) {
+            document.getElementById("header").style.top = "0";
+        } else {
+            document.getElementById("header").style.top = "-80px";
+        }
+        prevScrollpos = currentScrollPos;
+    }
+</script>
+
+{% endblock content %}

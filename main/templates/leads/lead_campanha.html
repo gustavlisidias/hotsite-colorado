@@ -1,0 +1,51 @@
+{% extends 'index.html' %}
+{% block content %}
+{% load static %}
+{% include '../mensagem.html' %}
+<div id="fullpage" class="fullpage-default">
+    <div class="section animated-row" data-section="slide06">
+        <div class="section-inner">
+            <div class="row justify-content-center mt-5 mt-md-0">
+                <div class="col-md-7 wide-col-laptop">
+                    <div class="title-block animate" data-animate="fadeInUp">
+                        <h3>Confirme seu interesse aqui</h3>
+                        <p>Entraremos em contato em breve</p>
+                    </div>
+                    <div class="contact-section">
+                        <div class="row">
+                            <div class="col animate" data-animate="fadeInUp">
+                                <form method="post" action="">
+                                    {% csrf_token %}
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="input-field">
+                                                <input type="text" class="form-control" name="nome" id="id_nome" required placeholder="Nome">
+                                            </div>
+                                        </div>
+                                        <div class="col">
+                                            <div class="input-field">
+                                                <input type="text" class="form-control" name="numero" id="id_numero" required placeholder="Celular">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="input-field">
+                                        <input type="email" class="form-control" name="email" id="id_email" required placeholder="Email">
+                                    </div>
+                                    <div class="input-field">
+                                        <input type="text" class="form-control" name="assunto" id="id_assunto" required placeholder="Assunto">
+                                    </div>
+                                    <div class="input-field">
+                                        <textarea onkeyup="countChar(this)" class="form-control" name="mensagem" id="id_mensagem" required placeholder="Mensagem"></textarea>
+                                        <small class="d-flex align-items-start">Caracteres restantes: <a id="charNum">512</a></small>
+                                    </div>
+                                    <button class="btn" type="submit">Cadastrar</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

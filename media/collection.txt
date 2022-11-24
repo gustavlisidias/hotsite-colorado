@@ -1,0 +1,14 @@
+asgiref==3.3.4
+beautifulsoup4==4.9.3
+Django==3.2
+django-object-actions==3.0.2
+humanize==3.4.1
+localflavor==1.9
+Pillow==8.2.0
+pytz==2021.1
+six==1.15.0
+soupsieve==2.2.1
+sqlparse==0.4.1
+Unidecode==1.2.0
+whitenoise==5.2.0
+django-ckeditor
